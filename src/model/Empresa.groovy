@@ -7,9 +7,15 @@ class Empresa extends Pessoa {
     @Override
     String exibeInformacoes() {
         return ("""
-                [EMPRESA]
+                Nome: ${nome}
                 CNPJ: ${cnpj}
+                E-mail: ${email}
                 País: ${pais}
-                """ + super.exibeInformacoes()).stripIndent().trim()
+                Estado: ${estado}
+                CEP: ${cep}
+                Descrição: ${descricao}
+                Competências: ${competencias.join(", ")}
+                """.stripIndent().trim()
+                )
     }
 }

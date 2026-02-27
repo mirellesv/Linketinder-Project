@@ -7,10 +7,15 @@ class Candidato extends Pessoa {
     @Override
     String exibeInformacoes() {
         return ("""
-                [CANDIDATO]
-                CPF: ${cpf},
+                Nome: ${nome}
+                CPF: ${cpf}
                 Idade: ${idade}
-                """ + super.exibeInformacoes().stripIndent().trim()
+                E-mail: ${email}
+                Estado: ${estado}
+                CEP: ${cep}
+                Descrição: ${descricao}
+                Competências: ${competencias.join(", ")}
+                """.stripIndent().trim()
         )
     }
 }
