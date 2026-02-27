@@ -112,11 +112,4 @@ class SeedData {
                 )
         ]
     }
-
-    static List<String> obtemCompetenciasPredefinidas(){
-        return [
-                "Python", "Java", "JavaScript", "Node.js",
-                "SQL", "Power BI", "React","Docker", "Git"
-        ]
-    }
 }
