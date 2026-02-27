@@ -73,11 +73,11 @@ class SeedData {
                 new Empresa(
                         nome: "Império Agro",
                         email: "talentos@imperioagro.com",
-                        cpj: "98.765.432/0001-10",
+                        cnpj: "98.765.432/0001-10",
                         pais: "Brasil",
                         estado: "SP",
                         cep: "01111-222",
-                        dsecricao: "Soluções tecnológicas agrícolas",
+                        descricao: "Soluções tecnológicas agrícolas",
                         competencias: ["React", "Node.js", "Docker"]
                 ),
                 new Empresa(
@@ -108,7 +108,7 @@ class SeedData {
                         estado: "PR",
                         cep: "81000-000",
                         descricao: "Produtos web e mobile",
-                        comptencias: ["Angular", "React", "Git"]
+                        competencias: ["Angular", "React", "Git"]
                 )
         ]
     }

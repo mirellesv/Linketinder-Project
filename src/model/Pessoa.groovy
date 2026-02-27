@@ -16,7 +16,7 @@ abstract class Pessoa implements IPessoa {
                Estado: ${estado},
                CEP: ${cep},
                Descrição: ${descricao},
-               Competências: ${comptencias.join(", ")}
+               Competências: ${competencias.join(", ")}
                """.stripIndent().trim()
     }
 }

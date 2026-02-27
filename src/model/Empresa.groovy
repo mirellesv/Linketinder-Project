@@ -8,7 +8,7 @@ class Empresa extends Pessoa {
     String exibeInformacoes() {
         return ("""
                 [EMPRESA]
-                CNPJ: ${cpnj}
+                CNPJ: ${cnpj}
                 País: ${pais}
                 """ + super.exibeInformacoes()).stripIndent().trim()
     }
