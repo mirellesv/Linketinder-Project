@@ -16,6 +16,6 @@ class Empresa extends Pessoa {
                 Descrição: ${descricao}
                 Competências: ${competencias.join(", ")}
                 """.stripIndent().trim()
-                )
+        )
     }
 }
