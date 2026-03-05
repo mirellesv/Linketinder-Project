@@ -45,8 +45,26 @@ class LinkeTinderApp {
                     }
                     break
                 case "2":
-                    /*
-                    servicoCadastro.criarEmpresa()*/
+                    println "==== CADASTRO DE EMPRESA ===="
+                    print "Nome: "
+                    String nome = scanner.nextLine()
+                    print "CNPJ: "
+                    String cnpj = scanner.nextLine()
+                    print "E-mail: "
+                    String email = scanner.nextLine()
+                    print "País: "
+                    String pais = scanner.nextLine()
+                    print "Estado: "
+                    String estado = scanner.nextLine()
+                    print "CEP: "
+                    String cep = scanner.nextLine()
+                    print "Descrição: "
+                    String descricao = scanner.nextLine()
+                    print "Competências (separadas por vírgula): "
+                    List<String> competencias = scanner.nextLine().split(",").collect(it -> it.trim())
+
+                    servicoCadastro.criarEmpresa(nome, cnpj, email, pais, estado, cep, descricao, competencias)
+                    println "\n Empresa cadastrada com sucesso!"
                     break
                 case "3":
                     servicoCadastro.listarCandidatos()
