@@ -3,12 +3,12 @@ package app
 import data.SeedData
 import model.Candidato
 import model.Empresa
+import service.ServicoCadastro
 import ui.Menu
 
 class LinkeTinderApp {
     static void main(String[] args) {
-        List<Candidato> candidatos = SeedData.seedCandidatos();
-        List<Empresa> empresas = SeedData.seedEmpresas();
+        def servicoCadastro = new ServicoCadastro()
 
         def scanner = new Scanner(System.in)
 
@@ -18,10 +18,41 @@ class LinkeTinderApp {
 
             switch(opcao){
                 case "1":
-                    Menu.listarCandidatos(candidatos)
+                    try {
+                        println "==== CADASTRO DE CANDIDATO ===="
+                        print "Nome: "
+                        String nome = scanner.nextLine()
+                        print "CPF: "
+                        String cpf = scanner.nextLine()
+                        print "Idade: "
+                        int idade = Integer.parseInt(scanner.nextLine())
+                        print "E-mail: "
+                        String email = scanner.nextLine()
+                        print "Estado: "
+                        String estado = scanner.nextLine()
+                        print "CEP: "
+                        String cep = scanner.nextLine()
+                        print "Descrição: "
+                        String descricao = scanner.nextLine()
+                        print "Competências (separadas por vírgula): "
+                        List<String> competencias = scanner.nextLine().split(",").collect { it.trim() }
+
+                        servicoCadastro.criarCandidato(nome, cpf, idade, email, estado, cep, descricao, competencias)
+                        println "\nCandidato cadastrado com sucesso!"
+                    }catch(Exception e){
+                        println "Erro ao cadastrar candidato: ${e.message}"
+                        e.printStackTrace()
+                    }
                     break
                 case "2":
-                    Menu.listarEmpresas(empresas)
+                    /*
+                    servicoCadastro.criarEmpresa()*/
+                    break
+                case "3":
+                    servicoCadastro.listarCandidatos()
+                    break
+                case "4":
+                    servicoCadastro.listarEmpresas()
                     break
                 case "0":
                     println "Saindo..."
