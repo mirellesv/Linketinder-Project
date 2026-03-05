@@ -11,6 +11,10 @@ class ServicoCadastro {
         candidatos.add(novoCandidato)
     }
 
+    void adicionarEmpresa(Empresa novaEmpresa){
+        empresas.add(novaEmpresa)
+    }
+
     List<Candidato> listarCandidatos(){
         return candidatos
     }
@@ -34,6 +38,16 @@ class ServicoCadastro {
     }
 
     void criarEmpresa(String nome, String cnpj, String email, String pais, String estado, String cep, String descricao, List<String> competencias){
-
+        def empresa = new Empresa(
+                nome: nome,
+                cnpj: cnpj,
+                email: email,
+                pais: pais,
+                estado: estado,
+                cep: cep,
+                descricao: descricao,
+                competencias: competencias
+        )
+        adicionarEmpresa(empresa)
     }
 }
