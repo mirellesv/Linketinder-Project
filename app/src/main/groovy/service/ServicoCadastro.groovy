@@ -16,6 +16,16 @@ class ServicoCadastro {
     }
 
     void criarCandidato(String nome, String cpf, int idade, String email, String estado, String cep, String descricao, List<String> competencias){
-
+        def candidato = new Candidato(
+                nome: nome,
+                cpf: cpf,
+                idade: idade,
+                email: email,
+                estado: estado,
+                cep: cep,
+                descricao: descricao,
+                competencias: competencias
+        )
+        adicionarCandidato(candidato)
     }
 }
