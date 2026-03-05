@@ -6,25 +6,11 @@ import model.Empresa
 class Menu {
     static void exibirMenu(){
         println "\n=== LINKETINDER ==="
-        println "1) Listar candidatos"
-        println "2) Listar empresas"
+        println "1) Cadastrar candidato"
+        println "2) Cadastrar empresa"
+        println "3) Listar candidatos"
+        println "4) Listar empresas"
         println "0) Sair"
         println "Escolha: "
-    }
-
-    static void listarCandidatos(List<Candidato> candidatos){
-        println "\n--- CANDIDATOS ---"
-        candidatos.eachWithIndex{ candidato, int indice ->
-            println "\n Candidato ${indice}: "
-            println candidato.exibeInformacoes()
-        }
-    }
-
-    static void listarEmpresas(List<Empresa> empresas){
-        println "\n--- EMPRESAS ---"
-        empresas.eachWithIndex{ Empresa empresa, int indice ->
-            println "\n Empresa ${indice}"
-            println empresa.exibeInformacoes()
-        }
     }
 }

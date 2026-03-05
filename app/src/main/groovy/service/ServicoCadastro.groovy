@@ -16,11 +16,19 @@ class ServicoCadastro {
     }
 
     List<Candidato> listarCandidatos(){
-        return candidatos
+        println "\n--- CANDIDATOS ---"
+        candidatos.eachWithIndex{ candidato, int indice ->
+            println "\n Candidato ${indice}: "
+            println candidato.exibeInformacoes()
+        }
     }
 
     List<Empresa> listarEmpresas(){
-        return empresas
+        println "\n--- EMPRESAS ---"
+        empresas.eachWithIndex{ Empresa empresa, int indice ->
+            println "\n Empresa ${indice}"
+            println empresa.exibeInformacoes()
+        }
     }
 
     void criarCandidato(String nome, String cpf, int idade, String email, String estado, String cep, String descricao, List<String> competencias){
